@@ -24,7 +24,7 @@ resource "random_shuffle" "my_shuffle" {
   result_count = length(var.strings)
 }
 resource "random_id" "my_id" {
-    count = 1
+    count = 2
     byte_length = 5
     prefix = "Yowsa"
 }
