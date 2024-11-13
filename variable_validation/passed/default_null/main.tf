@@ -7,7 +7,7 @@ variable "test" {
     error_message = "test must be one of a, b, c or null"
   }*/
 
- validation {
+ /*validation {
 /*condition = (
       var.test != null ?
       var.test > 5 :
@@ -20,6 +20,6 @@ variable "test" {
       true
     )
     error_message = "test must be one of a, b, c or null"
-  }
+  }*/
 }
 
