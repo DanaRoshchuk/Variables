@@ -14,7 +14,7 @@ variable "test" {
       true
     )*/
  
-    condition = (
+   /* condition = (
       var.test != null ?
       contains(["a", "b", "c"], var.test) :
       true
