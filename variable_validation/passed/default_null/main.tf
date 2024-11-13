@@ -7,20 +7,20 @@ variable "test" {
     error_message = "test must be one of a, b, c or null"
   }*/
 
- /*validation {
+ validation {
 /*condition = (
       var.test != null ?
       var.test > 5 :
       true
     )*/
  
-   /* condition = (
+    condition = (
       var.test != null ?
       contains(["a", "b", "c"], var.test) :
       true
     )
     error_message = "test must be one of a, b, c or null"
   }
-*/
+
 }
 
