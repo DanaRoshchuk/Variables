@@ -1,5 +1,5 @@
 variable "magic_animal_tuple" {
-  type    = tuple([string, string, string])
+  type    = tuple([string, string, string, string])
   default = ["usualcentaur1$", "Big Earth", "Non-Archery-Dry-check-on-222staging", "ssss"]
 
   validation {
