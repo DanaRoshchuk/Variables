@@ -1,6 +1,6 @@
 variable "magic_animal_tuple" {
   type    = tuple([string, string, string])
-  default = ["usualcentaur1$", "Big Earth", "Non-Archery-Dry-check-on-222staging"]
+  default = ["usualcentaur1$", "Big Earth", "Non-Archery-Dry-check-on-222staging", "ssss"]
 
   validation {
     condition     = can(var.magic_animal_tuple[3])
