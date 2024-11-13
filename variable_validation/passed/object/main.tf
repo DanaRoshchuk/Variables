@@ -11,7 +11,7 @@ variable "only_one_optional_key" {
     }
 
     validation {
-        error_message = jsonencode(setintersection(keys(var.only_one_optional_key), ["cidrs", "netmask"])) #"Can only specify either \"cidrs\", or \"netmask\"."
-        condition = length(toset(setintersection(keys(var.only_one_optional_key), ["cidrs"]))) == 1
+        error_message = jsonencode((toset(setintersection(keys(var.only_one_optional_key), ["cidrs"])))) #"Can only specify either \"cidrs\", or \"netmask\"."
+        condition = length(toset(setintersection(keys(var.only_one_optional_key), ["cidrs"]))) < 0
     }
 }
