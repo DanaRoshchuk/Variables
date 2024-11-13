@@ -20,6 +20,7 @@ variable "test" {
       true
     )
     error_message = "test must be one of a, b, c or null"
-  }*/
+  }
+*/
 }
 
