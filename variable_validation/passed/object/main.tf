@@ -12,6 +12,6 @@ variable "only_one_optional_key" {
 
     validation {
         error_message = "Can only specify either \"cidrs\", or \"netmask\"."
-        condition = length(setintersection(keys(var.only_one_optional_key), ["cidrs", "netmask"])) == 1
+        condition = length(setintersection(keys(var.only_one_optional_key), ["cidrs", "netmask"])) > 1
     }
 }
