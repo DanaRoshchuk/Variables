@@ -1,16 +1,14 @@
-variable "create_cluster" {
-  description = "Whether to create a new cluster."
-  type        = bool
-  default     = false
+variable "primary_location" {
+  type = string
+  description = "Primary location for the resource group"
 }
- 
-variable "cluster_endpoint" {
-  description = "Endpoint of the existing cluster to use."
-  type        = string
-  default     = ""
- 
+
+variable "secondary_location" {
+  type = string
+  description = "Partner location to use for deployment"
+
   validation {
-    condition     = var.create_cluster == false ? length(var.cluster_endpoint) > 0 : true
-    error_message = "You must specify a value for cluster_endpoint if create_cluster is false."
+    condition = var.secondary_location != var.primary_location
+    error_message = "Secondary location must be different from the primary location"
   }
 }
