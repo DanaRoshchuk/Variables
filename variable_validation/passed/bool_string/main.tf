@@ -1,3 +1,16 @@
+
+resource "azurerm_resource_group" "main" {
+ name     = "main-resources"
+  location = var.primary_location
+}
+
+
+resource "azurerm_resource_group" "partner" {
+ name     = "partner-resources"
+  location = var.secondary_location
+}
+
+
 variable "primary_location" {
   type = string
   description = "Primary location for the resource group"
