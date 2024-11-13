@@ -11,7 +11,8 @@ variable "only_one_optional_key" {
     }
 
     validation {
-        error_message = jsonencode(keys(var.only_one_optional_key)) #"Can only specify either \"cidrs\", or \"netmask\"."
-        condition = length(toset(setintersection(keys(var.only_one_optional_key), ["cidrs"]))) < 0
+        error_message =  "Must specify at least one key from declaired var type ( \"cidrs\", or \"netmask\" or \"name\".)"
+        condition = length(toset(setintersection(keys(var.only_one_optional_key), ["cidrs"]))) > 0
     }
 }
+#jsonencode(keys(var.only_one_optional_key))
