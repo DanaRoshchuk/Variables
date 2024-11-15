@@ -42,7 +42,7 @@ variable "magic_animals" {
 variable "magic_animals_set" {
   type    = set(string)
   sensitive = true
-  default = ["unicorn", "dragon", "phoenix", "griffin", "black cat"]
+  #default = ["unicorn", "dragon", "phoenix", "griffin", "black cat"]
 }
 #In this example, the magic_animals_map variable is defined as a map of strings representing magic animals and their associated qualities. The resulting map will be { "unicorn" = "sparkle", "dragon" = "fire", "phoenix" = "rebirth", "griffin" = "majesty" }.
 variable "magic_animals_map" {
@@ -70,7 +70,7 @@ variable "magic_animal_object" {
 #In this example, the magic_animal_tuple variable is defined as a tuple that contains three magical animal attributes: name, element, and power. The resulting tuple will be ["Centaur", "Earth", "Archery"].
 variable "magic_animal_tuple" {
   type    = tuple([string, string, string])
-  default = ["Usual Centaur", "Big Earth", "Non-Archery-Dry-check-on-222staging"]
+  #default = ["Usual Centaur", "Big Earth", "Non-Archery-Dry-check-on-222staging"]
 }
 
 variable "magic_animals_string" {
