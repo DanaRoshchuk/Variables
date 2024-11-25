@@ -5,7 +5,7 @@ variable "magic_animals_list" {
   
   validation {
     condition = var.magic_animals_list[0] == "unicorn"
-    error_message = "Some animal is not listed in default values"
+    error_message = "First animal is not listed in default values. First value should be unicorn"
   }
 }
 
