@@ -54,10 +54,12 @@ variable "magic_animals_set" {
   type    = set(string)
   sensitive = true
   #default = ["unicorn", "dragon", "phoenix", "griffin", "black cat"]
+validation {
      condition     = one(toset(var.magic_animals_set)) == "unicorn"
     error_message = "Only unicorn will be valid"
   }
 }
+
 #In this example, the magic_animals_map variable is defined as a map of strings representing magic animals and their associated qualities. The resulting map will be { "unicorn" = "sparkle", "dragon" = "fire", "phoenix" = "rebirth", "griffin" = "majesty" }.
 variable "mymap" {
   type = map(object({
