@@ -1,4 +1,4 @@
-variable "magic_animals_set" {
+/*variable "magic_animals_set" {
   type    = set(string)
   #sensitive = true
   default = ["unicorn$"]
@@ -9,8 +9,16 @@ variable "magic_animals_set" {
     # error_message = "Invalid value [${var.prefix}]. The prefix value can only contain letters and numbers."
     error_message = "The value can only contain letters and numbers."
   }
+}*/
+
+variable "magic_animals_set" {
+  type    = set(string)
+  sensitive = true
+  #default = ["unicorn", "dragon", "phoenix", "griffin", "black cat"]
+validation {
+     condition     = one(toset(var.magic_animals_set)) == "unicorn"
+    error_message = "Only unicorn will be valid"
+  }
 }
 
 
-#"dragon", "phoenix", "griffin", "black cat"
-#regex("[a-z]+", 
