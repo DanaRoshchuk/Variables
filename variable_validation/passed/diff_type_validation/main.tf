@@ -106,7 +106,7 @@ variable "magic_animal_tuple" {
 
   validation {
     condition     = can(var.magic_animal_tuple[3])
-    error_message = "Should be failed!!!!!!Invalid fruit selected, only allowed fruits are: 'lemon', 'apple', 'mango', 'banana', 'cherry'. Default 'apple',Invalid fruit selected, only allowed fruits are: 'lemon', 'apple', 'mango', 'banana', 'cherry'. Default 'apple'"
+    error_message = "Should be failed if delete some default value and left only 3 values!!!!!!"
   }
   }
 
