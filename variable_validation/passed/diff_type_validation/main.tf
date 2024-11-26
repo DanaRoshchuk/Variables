@@ -112,3 +112,10 @@ variable "string_like_valid_ipv4_cidr" {
     error_message = "Must be valid IPv4 CIDR."
   }
 }
+
+variable "ecr_repo_name" {
+  validation {
+    condition     = var.ecr_repo_name == lower(var.ecr_repo_name)
+    error_message = "ECR repository name cannot be in uppercase"
+  }
+}
