@@ -60,26 +60,6 @@ validation {
   }
 }
 
-#In this example, the magic_animals_map variable is defined as a map of strings representing magic animals and their associated qualities. The resulting map will be { "unicorn" = "sparkle", "dragon" = "fire", "phoenix" = "rebirth", "griffin" = "majesty" }.
-variable "mymap" {
-  type = map(object({
-    my_key = string
-  }))
-
-  default = {
-log1 = {my_key: "val%"}, 
-log2 = {my_key: "val2"}
-}
-
-  validation {
-    condition = alltrue(
-       [for value in values(var.mymap) : regex("[a-z]+", value.my_key) == "val"]
-    )
-    error_message = "Each map key should include key string."
-  }
-
-}
-
 
 #In this example, the magic_animal_tuple variable is defined as a tuple that contains three magical animal attributes: name, element, and power. The resulting tuple will be ["Centaur", "Earth", "Archery"].
 variable "magic_animal_tuple" {
