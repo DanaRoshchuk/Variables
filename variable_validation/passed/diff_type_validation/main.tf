@@ -80,24 +80,6 @@ log2 = {my_key: "val2"}
 
 }
 
-#In this example, the magic_animal_object variable is defined as an object with three attributes: name, element, and power. The resulting object will be { "name" = "Mermaid", "element" = "Water", "power" = "Enchanting Voice" }.
-variable "only_one_optional_key" {
-    type = object({
-        name = optional(string)
-        cidrs = optional(list(string))
-        netmask = optional(number)
-    })
-
-    default = {
-        cidrs = ["10.0.0.0/16"]
-        name = "test"
-    }
-
-    validation {
-        error_message =  "Must specify at least one key from declaired var type ( \"cidrs\", or \"netmask\" or \"name\".)"
-        condition = length(toset(setintersection(keys(var.only_one_optional_key), ["cidrs"]))) > 0
-    }
-}
 
 #In this example, the magic_animal_tuple variable is defined as a tuple that contains three magical animal attributes: name, element, and power. The resulting tuple will be ["Centaur", "Earth", "Archery"].
 variable "magic_animal_tuple" {
