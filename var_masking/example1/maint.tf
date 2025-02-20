@@ -7,12 +7,12 @@ resource "random_pet" "resource" {
 }
 
 variable "var-var-var" {
-  sensitive = true
+  #sensitive = true
   default = "string"
 }
 
 
 variable "len" {
-  sensitive = true
+  #sensitive = true
   default = 1234
 }
